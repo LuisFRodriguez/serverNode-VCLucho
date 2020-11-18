@@ -1,0 +1,27 @@
+{
+  "name": "servidorsuramerica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js",
+    "dev": "nodemon main.js"
+  },
+  "author": "Ing. Stiven Rojas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "colombia-holidays": "0.0.1",
+    "date-diff": "^0.2.1",
+    "date-format": "^2.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "forever": "^0.15.3",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.9",
+    "path": "^0.12.7",
+    "static": "^2.0.0"
+  }
+}
