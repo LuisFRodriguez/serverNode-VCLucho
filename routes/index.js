@@ -25,7 +25,7 @@ router.get('/consultarDB', (req,res,next)=>{
 })
 
 
-router.post('/tryPost',(req,res,next)=>{
+router.post('/user',(req,res,next)=>{
     controllers.contrInsertDataPer(req.body.Codigo_Persona, req.body.Nombre,req.body.Telefono,req.body.Usuario,req.body.Password ).then(result=>{
         console.log(result)
     }).catch(err=>{
