@@ -6,7 +6,13 @@ const controllers=require("../controllers/index")
 const mysql = require ("mysql");
 //const path = require('path');
 
-
+const app= express();
+router.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+});
 
 router.get ('/login',controllers.dataPet);
 
@@ -26,12 +32,17 @@ router.get('/consultarDB', (req,res,next)=>{
 
 
 router.post('/user',(req,res,next)=>{
-    controllers.contrInsertDataPer(req.body.Codigo_Persona, req.body.Nombre,req.body.Telefono,req.body.Usuario,req.body.Password ).then(result=>{
+console.log(req.headers);
+controllers.contrInsertDataPer(req.body.Codigo_Persona, req.body.Nombre,req.body.Telefono,req.body.Usuario,req.body.Password ).then(result=>{
         console.log(result)
+
     }).catch(err=>{
         console.log(err)
     })
 })
+
+
+
 
 router.post('/LaborApp/PruebaGuardarContratoLaboral',(req,res,next)=>{
     controllers.manejaDatosConflictoLaboral(req.body).then(result=>{
